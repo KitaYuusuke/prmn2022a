@@ -5,4 +5,9 @@ public class GasStation {
         car.fuel = car.fuel + 20;
         System.out.println("給油したことによりfuelが20増えました。");
     }
+
+    void refuel(Car2 car){
+        car.fuel = car.fuel + 20;
+        System.out.println("給油したことによりfuelが20増えました。");
+    }
 }
