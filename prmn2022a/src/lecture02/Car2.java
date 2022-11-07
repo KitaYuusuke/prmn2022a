@@ -3,7 +3,7 @@ package lecture02;
 public class Car2 {
 
     int fuel;
-    Tire[] tires; //= new Tire[4]
+    Tire[] tires;
     Engine engine;
 
     Car2(Tire[] tires,Engine engine){
