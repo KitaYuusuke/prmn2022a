@@ -9,7 +9,7 @@ public class Exercise3_4 {
         vege.add(new Vegetable("たまねぎ",120));
         vege.add(new Vegetable("じゃがいも",154));
 
-        for(int i=0;i< vege.size();i++){
+        for(int i=0;i<vege.size();i++){
             vege.get(i).print();
         }
 
