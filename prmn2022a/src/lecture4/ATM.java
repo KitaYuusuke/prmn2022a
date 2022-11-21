@@ -47,12 +47,10 @@ public class ATM {
 
                 if (account.getBalance() >= money) {
                     account.setBalance(account.getBalance() - money);
-                    System.out.print("口座番号: " + number + " から " + money + " 円引き出しました。");
-                    System.out.println("残高: " + account.getBalance() + " 円です。");
+                    System.out.print("口座番号: " + number + " から " + money + " 円引き出しました。残高: " + account.getBalance() + " 円です。");
                     return money;
                 } else {
-                    System.out.print("口座番号: " + number + " から " + money + " 円引き出せませんでした。");
-                    System.out.println("残高: " + account.getBalance() + " 円です。");
+                    System.out.print("口座番号: " + number + " から " + money + " 円引き出せませんでした。残高: " + account.getBalance() + " 円です。");
                     return 0;
                 }
 
