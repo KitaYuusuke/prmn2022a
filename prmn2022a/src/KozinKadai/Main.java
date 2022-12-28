@@ -4,8 +4,11 @@ public class Main {
     public static void main(String[] args) {
         Opening opening = new Opening();
         opening.op();
-        QuestionInput qi = new QuestionInput();
-        //Javakkuri ja = qi.inputq();
-        //ja.answer();
+
+        Navi navi = new Navi();
+        navi.start();
+
+        Questions q = new Questions();
+        q.question();
     }
 }

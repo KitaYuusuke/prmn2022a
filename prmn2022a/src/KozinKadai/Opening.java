@@ -128,6 +128,12 @@ public class Opening {
     public void op(){
         while(true){
             if(count == maxCount){
+                try {
+                    Thread.sleep(2000);
+                } catch (InterruptedException e) {
+                    throw new RuntimeException(e);
+                }
+                System.out.println();
                 break;
             }
             else if(count == 18){
@@ -159,7 +165,7 @@ public class Opening {
                 System.out.println();
             }
             try {
-                Thread.sleep(400);
+                Thread.sleep(500);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }

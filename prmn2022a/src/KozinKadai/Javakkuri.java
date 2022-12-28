@@ -7,60 +7,32 @@ import java.util.Random;
 
 public class Javakkuri {
     Scanner input = new Scanner(System.in);
+    Serihu se = new Serihu();
     private String question;
     private List<String> splita;
-    private List<String> human = new ArrayList<String>(Arrays.asList("たけし","かずお"));
-    private List<String> food = new ArrayList<String>(Arrays.asList("とうふ","おはぎ"));
-    private List<String> place = new ArrayList<String>(Arrays.asList("よしのがりいせき","いーすたーとう"));
+    private List<String> human = new ArrayList<String>(Arrays.asList("たかし","かずお","やまかわ","こまつがわ","あなた"));
+    private List<String> food = new ArrayList<String>(Arrays.asList("とうふ","おはぎ","ほたて","やつはし","せろり"));
+    private List<String> place = new ArrayList<String>(Arrays.asList("でぃずにーらんど","い｜すた｜とう","かぎだい","ぜんぽうこうえんふん","なぞのばしょ"));
     private int listSize = human.size();
 
     public Javakkuri(String question) {
-        while(true) {
-            if (question.contains("誰") || question.contains("食べ物") || question.contains("場所")) {
                 this.question = question;
-                break;
-            } else {
-                System.out.println("キーワードを入力せよ");
-                question = input.next();
-            }
-        }
     }
 
     public void answer(){
         Random rand = new Random();
         int index = rand.nextInt(this.listSize);
         if(question.contains("誰")){
-            for(int i = 0; i < human.get(index).length(); i++) {
-                System.out.println(human.get(index).charAt(i));
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+            se.jaserihu(human.get(index));
         }
         else if(question.contains("食べ物")){
-            for(int i = 0; i < food.get(index).length(); i++) {
-                System.out.println(food.get(index).charAt(i));
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+            se.jaserihu(food.get(index));
         }
         else if(question.contains("場所")){
-            for(int i = 0; i < place.get(index).length(); i++) {
-                System.out.println(place.get(index).charAt(i));
-                try {
-                    Thread.sleep(1000);
-                } catch (InterruptedException e) {
-                    throw new RuntimeException(e);
-                }
-            }
+            se.jaserihu(place.get(index));
         }
         else{
-            System.out.println("該当なし");
+            se.serihu("... (あなた；質問の仕方が悪かったようだ... いったん戻ってもらおう)");
         }
     }
 
