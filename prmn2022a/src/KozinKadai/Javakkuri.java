@@ -10,9 +10,9 @@ public class Javakkuri {
     Serihu se = new Serihu();
     private String question;
     private List<String> splita;
-    private List<String> human = new ArrayList<String>(Arrays.asList("たかし","かずお","やまかわ","こまつがわ","あなた"));
-    private List<String> food = new ArrayList<String>(Arrays.asList("とうふ","おはぎ","ほたて","やつはし","せろり"));
-    private List<String> place = new ArrayList<String>(Arrays.asList("でぃずにーらんど","い｜すた｜とう","かぎだい","ぜんぽうこうえんふん","なぞのばしょ"));
+    private List<String> human = new ArrayList<String>(Arrays.asList("たかし","かずお","ぼぶ","まいける","あなた"));
+    private List<String> food = new ArrayList<String>(Arrays.asList("とうふ","おはぎ","ほたて","やきとり","せろり"));
+    private List<String> place = new ArrayList<String>(Arrays.asList("でぃずにーらんど","い｜すた｜とう","かぎだい","まちゅぴちゅ","とっとり"));
     private int listSize = human.size();
 
     public Javakkuri(String question) {
