@@ -27,7 +27,7 @@ public class NeuralNet {
 		hidden = new double[N_HIDDEN]; // 中間層
 		output = new double[N_OUTPUT]; // 出力層
 
-		// 重みを-0.1~0.1で初期化
+		// 重みを-0.1~0.1で初期化 ①
 		Random rnd = new Random();
 
 		w1 = new double[N_INPUT][N_HIDDEN];
@@ -56,7 +56,7 @@ public class NeuralNet {
 			input[i] = x[i];
 		}
 
-		// 中間層の計算
+		// 中間層の計算　④⑤
 		for(int i=0; i<N_HIDDEN; i++){
 			hidden[i] = 0.0;
 			for(int j=0; j<N_INPUT; j++){
@@ -66,7 +66,7 @@ public class NeuralNet {
 			hidden[i] = sigmoid(hidden[i]);
 		}
 
-		// 出力層の計算
+		// 出力層の計算　⑥⑦
 		for(int i=0; i<N_OUTPUT; i++){
 			output[i] = 0.0;
 			for(int j=0; j<N_HIDDEN; j++){
@@ -88,10 +88,10 @@ public class NeuralNet {
 	// 誤差逆伝播法による重みの更新
 	public void backPropagation(double teach[]){
 
-		// 誤差
+		// 誤差　⑧
 		double[] deltas = new double[N_OUTPUT];
 
-		// 中間層>出力層の重みを更新
+		// 中間層>出力層の重みを更新　⑨
 		for(int j=0; j<N_OUTPUT; j++){
 			deltas[j] = (teach[j]-output[j]) * output[j] * (1.0-output[j]);
 			for(int i=0; i<N_HIDDEN; i++){
@@ -116,7 +116,7 @@ public class NeuralNet {
 		}
 	}
 
-	// 二乗誤差
+	// 二乗誤差　⑩
 	public double calcError(double teach[]){
 		double e = 0.0;
 		for(int i=0; i<teach.length; i++){
@@ -146,7 +146,7 @@ public class NeuralNet {
 				System.out.println("step:" + step + ", loss=" + e);
 			}
 
-			// 二乗誤差が十分小さくなったら、終了
+			// 二乗誤差が十分小さくなったら、終了　⑪
 			if(e < 0.0001){
 				break;
 			}

@@ -14,7 +14,7 @@ public class CRApp {
 
 		NeuralNet nn = new NeuralNet(36, 36, 4);
 
-		// 訓練データ（入力）
+		// 訓練データ（入力）②
 		double knownInputs[][] = {
 			{ // 0の訓練データ
 			  0, 0, 1, 1, 0, 0,
@@ -34,7 +34,7 @@ public class CRApp {
 			}
 		};
 
-		// 教師データ
+		// 教師データ　②
 		double t[][] = {
 				{0, 0, 0, 0}, // この組み合わせを0とする
 				{0, 0, 0, 1}  // この組み合わせを1とする
